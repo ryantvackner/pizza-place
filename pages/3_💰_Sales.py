@@ -169,6 +169,7 @@ with tab_ingredients:
 
 # seasonality in sales
 st.subheader(":sunny: :snowflake: Seasonality in Sales")
+st.write("Looks like Pizza Place has weekly seasonality. With sales increasing throughout the week, peaking on weekends.")
 days_range = sl_order_end_date - sl_order_start_date
 if days_range.days < 14:
     st.error("Date Range Must Be Greater Than 14 Days To See Seasonality in Sales")

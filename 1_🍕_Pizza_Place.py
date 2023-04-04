@@ -98,7 +98,7 @@ st.write("Pizza Place has an average of 60 Customers per day. \
           Except for around the end of year holidays where the average drops to 44 customers a day. \
           That is a 25% decrease in average customers during the holiday season.")
 st.write("**My recommendation is to close up shop a couple days before Christmas and reopen after the New Year. \
-          This will increase your profit margins are you will not be opening up on known low profit margin days.**")
+          This will increase your profit margins as you will not be opening up on known low profit margin days.**")
 st.write("Pizza Place has some pizzas that are really big hits. \
           Like The Classic Deluxe Pizza, The Barbecue Chicken Pizza, The Hawaiian Pizza, and The Pepperoni Pizza. \
           Which all had over 2,400 orders in 2015. \
