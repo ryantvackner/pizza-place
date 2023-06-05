@@ -47,11 +47,11 @@ min_order_price = round(df_order_price["price"].min(), 2)
 st.subheader(":bar_chart: Key Performance Indicators")
 
 # some metrics
-st.metric("Total Sales", "$" + str(tot_sales))
+st.metric("Total Sales", "${:,.2f}".format(tot_sales))
 col_avg_sales, col_max_sales, col_min_sales = st.columns(3)
-col_avg_sales.metric("Average Order Sale", "$" + str(avg_order_price))
-col_max_sales.metric("Largest Order Sale", "$" + str(max_order_price))
-col_min_sales.metric("Smallest Order Sale", "$" + str(min_order_price))
+col_avg_sales.metric("Average Order Sale", "${:,.2f}".format(avg_order_price))
+col_max_sales.metric("Largest Order Sale", "${:,.2f}".format(max_order_price))
+col_min_sales.metric("Smallest Order Sale", "${:,.2f}".format(min_order_price))
 
 
 # how much money did we make this year?
@@ -66,9 +66,9 @@ with tab_sales_by_day:
     df_sales.rename(columns = {'datetime':'Date', 'price':'Sales'}, inplace = True)
     
     col_avg_sales, col_max_sales, col_min_sales = st.columns(3)
-    col_avg_sales.metric("Average Daily Sales", "$" + str(round(df_sales["Sales"].mean())))
-    col_max_sales.metric("Largest Daily Sales", "$" + str(round(df_sales["Sales"].max())))
-    col_min_sales.metric("Smallest Daily Sales", "$" + str(round(df_sales["Sales"].min())))
+    col_avg_sales.metric("Average Daily Sales", "${:,.2f}".format(round(df_sales["Sales"].mean())))
+    col_max_sales.metric("Largest Daily Sales", "${:,.2f}".format(round(df_sales["Sales"].max())))
+    col_min_sales.metric("Smallest Daily Sales", "${:,.2f}".format(round(df_sales["Sales"].min())))
     
     # create the chart
     c_sales = alt.Chart(df_sales).mark_line() \
@@ -84,9 +84,9 @@ with tab_sales_by_month:
     df_sales.rename(columns = {'datetime':'Date', 'price':'Sales'}, inplace = True)
     
     col_avg_sales, col_max_sales, col_min_sales = st.columns(3)
-    col_avg_sales.metric("Average Monthly Sales", "$" + str(round(df_sales["Sales"].mean())))
-    col_max_sales.metric("Largest Monthly Sales", "$" + str(round(df_sales["Sales"].max())))
-    col_min_sales.metric("Smallest Monthly Sales", "$" + str(round(df_sales["Sales"].min())))
+    col_avg_sales.metric("Average Monthly Sales", "${:,.2f}".format(round(df_sales["Sales"].mean())))
+    col_max_sales.metric("Largest Monthly Sales", "${:,.2f}".format(round(df_sales["Sales"].max())))
+    col_min_sales.metric("Smallest Monthly Sales", "${:,.2f}".format(round(df_sales["Sales"].min())))
     
     # create the chart
     c_sales = alt.Chart(df_sales).mark_line(point=True) \
@@ -104,9 +104,8 @@ with tab_sales_by_quarter:
     df_sales.rename(columns = {'quarter':'Quarter', 'price':'Sales'}, inplace = True)
     
     col_avg_sales, col_max_sales, col_min_sales = st.columns(3)
-    col_avg_sales.metric("Average Quarterly Sales", "$" + str(round(df_sales["Sales"].mean())))
-    col_max_sales.metric("Largest Quarterly Sales", "$" + str(round(df_sales["Sales"].max())))
-    col_min_sales.metric("Smallest Quarterly Sales", "$" + str(round(df_sales["Sales"].min())))
+    col_avg_sales.metric("Average Quarterly Sales", "${:,.2f}".format(round(df_sales["Sales"].mean())))
+    col_max_sales.metric("Largest Quarterly Sales", "${:,.2f}".format(round(df_sales["Sales"].max())))
     
     # create the chart
     c_sales = alt.Chart(df_sales).mark_line(point=True) \

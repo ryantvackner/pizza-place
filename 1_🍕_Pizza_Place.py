@@ -86,7 +86,7 @@ second_most_recent_sales = df_sales[df_sales['Date'] == last_month]
 diff_sales = most_recent_sales["Sales"].iloc[0] - second_most_recent_sales["Sales"].iloc[0]
 
 
-col_sales.metric("Current Monthly Sales", "$" + str(round(most_recent_sales['Sales'].iloc[0], 2)), str(round(diff_sales, 2)))
+col_sales.metric("Current Monthly Sales", "${:,.2f}".format(round(most_recent_sales['Sales'].iloc[0], 2)), str(round(diff_sales, 2)))
 
 
 
